@@ -2,10 +2,14 @@
 
 ####  Contents are taken from Udacity Lecture Notes and also some websites.
 
+<<<<<<< HEAD
 This is the starter template for the final assessment project for Udacity's React Fundamentals course.
 In the MyReads project, I have created a bookshelf app that allows me to select and categorize books I have read, 
 are currently reading, or want to read. The project emphasizes using React to build the application and provides an API server 
 and client library that I use to persist information as I interact with the application.
+=======
+This is the starter template for the final assessment project for Udacity's React Fundamentals course. 
+>>>>>>> bdaa6091da907951946e554f0602c34b66907566
 
 
 ## Dependencies
