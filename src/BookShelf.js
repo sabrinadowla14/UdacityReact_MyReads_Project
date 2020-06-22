@@ -16,6 +16,7 @@ class BookShelf extends Component {
    onChangeBookShelf = (book, shelf) => {
       this.props.onChangeBookShelf(book, shelf);
    }
+
    render () {
      const { books, onChangeBookShelf, title } = this.props;
      //let currentBookShelf = "none";
