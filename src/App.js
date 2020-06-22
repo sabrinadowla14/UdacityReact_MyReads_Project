@@ -9,6 +9,11 @@ class BooksApp extends React.Component {
   state = {
    books: []
   };
+/* Going to call BooksAPI.getAll() method will return a promise
+   it will call this.setState() which will return an object with
+   new books. When our app reloads we are fetching those books from the
+   remote server, once we get the response we will update our local state.
+   which will updae the UI */
  
   componentDidMount() {
     this.get_book_details()

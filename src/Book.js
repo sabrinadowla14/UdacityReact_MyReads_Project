@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
-import _ from 'lodash'
+//import _ from 'lodash'
 
 
 class Book extends Component {
@@ -27,7 +27,7 @@ class Book extends Component {
                         width: 128, 
                         height: 193, 
                         //backgroundImage: `url("${book.imageLinks.thumbnail}")`
-                        backgroundImage: `url("${_.has(book, 'imageLinks') ? book.imageLinks.thumbnail: "placeholder.png"}")`
+                        backgroundImage: `url("${ book.imageLinks.thumbnail }")`
                       }}></div>
                             <div className="book-shelf-changer">
                               <select onChange={e => this.onChangeShelf(book,e)} value={book.shelf} >

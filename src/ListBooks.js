@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import BookShelf from './BookShelf';
 import './App.css';
 
-class ListBooks extends React.Component {
+class ListBooks extends Component {
+  
   static propTypes = {
   books: PropTypes.array.isRequired,
   onChangeBookShelf: PropTypes.func.isRequired
@@ -23,22 +24,26 @@ render() {
    
     
    return (
+    <div className="list-books">
+       <div className="list-books-title">
+           <h1>MyReads</h1>
+       </div>
     <div className="list-books-content">
-      {shelvesforBooks.map((shelf, index) => {
+      {shelvesforBooks.map((shelf) => {
         const booksOnShelf = books.filter(book => book.shelf === shelf.key);
         return (
-          <div className="bookshelf" key={index}>
+          <div className="bookshelf" key={shelf.key}>
             <h2 className="bookshelf-title">{shelf.title}</h2>
             <div className="bookshelf-books">
               <BookShelf books={booksOnShelf} onChangeBookShelf={onChangeBookShelf} />
             </div>
           </div>
-        );
-      })}
-    </div>
-  );
-
-}
+              );
+          })}
+       </div>
+</div>
+      );
+   }
 }
 
 export default ListBooks;
