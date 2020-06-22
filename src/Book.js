@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
-//import _ from 'lodash'
 
 
 class Book extends Component {
@@ -26,7 +25,6 @@ class Book extends Component {
                     style={{ 
                         width: 128, 
                         height: 193, 
-                        //backgroundImage: `url("${book.imageLinks.thumbnail}")`
                         backgroundImage: `url("${ book.imageLinks.thumbnail }")`
                       }}></div>
                             <div className="book-shelf-changer">
