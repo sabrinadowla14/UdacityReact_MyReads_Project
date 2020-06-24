@@ -7,12 +7,13 @@ import * as BooksAPI from './BooksAPI'
 
 class SearchBooks extends Component {
   static propTypes = {
-    books: PropTypes.array.isRequired,
+    shelfBooks: PropTypes.array.isRequired,
     onChangeBookShelf: PropTypes.func.isRequired,
   }
 state = {
   query: '',
-  updatedBooks: []
+  updatedBooks: [],
+  error: false
 };
 
 updateQuery = (query) => {
@@ -23,19 +24,36 @@ updateQuery = (query) => {
 clearQuery = () => {
     this.updateQuery('')
   }
-searchBooks = (event) => {
-   //let query = event.target.value;
-   let query = event;
-   this.setState({query })
+updatedBooks(books) {
+  const checkedBooks = books.map((book) => {
+     //initialize the book
+    book.shelf = 'none';
+    this.props.shelfBooks.forEach(shelfBook => {
+       if( book.id === shelfBook.id) {
+         book.shelf = shelfBook.shelf;
+       }
+    
+  });
+       return book;
+    
+  });
+    this.setState({
+       updatedBooks : checkedBooks
+    }) 
+}
+
+
+searchBooks = (query) => {
+   this.setState({query})
    if(query) {
       BooksAPI.search(query, 15).then(books =>{
       (books.length) > 0 
-        ? this.setState({updatedBooks: books})
-        : this.setState({updatedBooks: []})
+        ? this.setState({updatedBooks: (this.updatedBooks(books)), error:false})
+        : this.setState({updatedBooks: this.updatedBooks ([]), error:true})
     
       } )}
    else {
-      this.setState({updatedBooks: [] });
+      this.setState({updatedBooks: this.updatedBooks ([]), error: false});
    
  }
   

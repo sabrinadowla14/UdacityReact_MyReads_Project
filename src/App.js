@@ -42,7 +42,7 @@ render() {
         )} />
     
      <Route path='/search' render={() => (
-        <SearchBooks books={this.state.books} onChangeBookShelf={this.newBookShelf}
+        <SearchBooks shelfBooks={this.state.books} onChangeBookShelf={this.newBookShelf}
          />
         )} />
      <div className="open-search">
