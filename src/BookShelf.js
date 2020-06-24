@@ -19,7 +19,7 @@ class BookShelf extends Component {
 
    render () {
      const { books, onChangeBookShelf, title } = this.props;
-     //let currentBookShelf = "none";
+     
      return (
           <ol className="books-grid">
                        {books.map((book) => ( 

@@ -46,10 +46,11 @@ updatedBooks(books) {
 searchBooks = (query) => {
    this.setState({query})
    if(query) {
-      BooksAPI.search(query, 15).then(books =>{
+      BooksAPI.search(query, 20).then(books =>{
       (books.length) > 0 
         ? this.setState({updatedBooks: (this.updatedBooks(books)), error:false})
         : this.setState({updatedBooks: this.updatedBooks ([]), error:true})
+        
     
       } )}
    else {
@@ -60,7 +61,7 @@ searchBooks = (query) => {
 }
 
 render() {
-    const { query, updatedBooks } = this.state;
+    const { query, updatedBooks} = this.state;
     const books = this.props.books;
     const onChangeBookShelf = this.props.onChangeBookShelf;
 
