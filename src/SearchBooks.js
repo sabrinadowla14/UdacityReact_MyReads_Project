@@ -44,21 +44,14 @@ updatedBooks(books) {
 
 
 searchBooks = (query) => {
-   this.setState({query})
-   if(query) {
-      BooksAPI.search(query, 20).then(books =>{
-      (books.length) > 0 
-        ? this.setState({updatedBooks: (this.updatedBooks(books)), error:false})
-        : this.setState({updatedBooks: this.updatedBooks ([]), error:true})
-        
-    
-      } )}
-   else {
-      this.setState({updatedBooks: this.updatedBooks ([]), error: false});
-   
- }
-  
-}
+   this.setState({query});
+  (query.length === 0) 
+     ? this.setState({updatedBooks: []})
+     : BooksAPI.search(query, 20).then(books =>{
+      ((books.error) ? this.setState({updatedBooks:[]}) : this.updatedBooks(books))
+       })
+	   }
+                                       
 
 render() {
     const { query, updatedBooks} = this.state;
