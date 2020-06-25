@@ -7,7 +7,7 @@ import missingBookCover from './icons/missingBookCover.png'
 class Book extends Component {
   
   static propTypes = {
-    books: PropTypes.array.isRequired,
+    
     book: PropTypes.object.isRequired,
     onChangeBookShelf: PropTypes.func.isRequired,
    
