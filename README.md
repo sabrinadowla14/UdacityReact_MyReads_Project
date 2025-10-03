@@ -3,9 +3,9 @@
 ####  Contents are taken from Udacity Lecture Notes and also some websites.
 
 ## HEAD
-```This is the starter template for the final assessment project for Udacity's React Fundamentals course.
+``` This is the starter template for the final assessment project for Udacity's React Fundamentals course.
    In the MyReads project, I have created a bookshelf app that allows me to select and categorize books I have read, 
-   are currently reading, or want to read. The project emphasizes using React to build the application and provides an API server 
+   am currently reading, or want to read. The project emphasizes using React to build the application and provides an API server 
    and client library that I use to persist information as I interact with the application.
 ```
 
@@ -25,7 +25,7 @@ Run:
 ├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
 ├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
 ├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
+│   ├── favicon.ico # React Icon, You may change it if you wish.
 │   └── index.html # DO NOT MODIFY
 └── src
     ├── App.css # Styles for your app. Feel free to customize this as you desire.
@@ -36,7 +36,7 @@ Run:
     │   ├── add.svg
     │   ├── arrow-back.svg
     │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
+    ├── index.css # Global styles. You probably won't need to make any changes here.
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.
 ```
 
@@ -54,7 +54,7 @@ To simplify your development process, we've provided a backend server for you to
 
 Method Signature:
 
-```js
+``` js
 getAll()
 ```
 
@@ -65,13 +65,13 @@ getAll()
 
 Method Signature:
 
-```js
+``` js
 update(book, shelf)
 ```
 
 * book: `<Object>` containing at minimum an `id` attribute
 * shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
-* Returns a Promise which resolves to a JSON object containing the response data of the POST request
+* Returns a Promise that resolves to a JSON object containing the response data of the POST request
 
 ### `search`
 
@@ -84,10 +84,10 @@ search(query, maxResults)
 * query: `<String>`
 * maxResults: `<Integer>` Due to the nature of the backend server, search results are capped at 20, even if this is set higher.
 * Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
+* These books do not know which shelf they are on. They are raw results only. Please ensure that books display the correct state on the search page.
 
 ## Important Note - Given
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
+The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms is the only set that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't yield any results.
 
 ## Create React App
 
